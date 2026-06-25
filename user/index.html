@@ -1,77 +1,86 @@
-<body>
-  <main>
-    <page route="/gists"></page>
-    <page route="/gists/code"></page>
-    <page class="active" route="/gists/user">
-      <blocks auth="false">
-        <header>
-          <section>
-            <card>
-              <row>
-                <box css-margin-right="auto">
-                  <a>
-                    <i>
-                      <con></con>
-                    </i>
-                    <text>Gists</text>
-                  </a>
-                </box>
-                <box>
-                  <a>
-                    <i>
-                      <con></con>
-                    </i>
-                  </a>
-                </box>
-                <box>
-                  <a>
-                    <i>
-                      <con></con>
-                    </i>
-                  </a>
-                </box>
-              </row>
-            </card>
-          </section>
-        </header>
-        <block>
-          <section>
-            <card css-text-align="center">
-              <column>
-                <box>
-                  <form css-flex-direction="column">
-                    <text>Enter GitHub Access Key</text>
-                    <input type="text">
-                    <input type="submit">
-                  </form>
-                </box>
-                <box>
-                  <section>
-                    <text>or</text>
-                  </section>
-                </box>
-                <box>
-                  <row>
-                    <ico><n></n></ico>
-                    <text>Signin with GitHub
-                  </row>
-                </box>
-              </column>
-            </card>
-        </block>
-      </blocks>
-      <blocks auth="true">
-        <block>
-          <section>
-            <card>
-              <row>
-                <picture><img></picture>
-                <text>username</text>
-              </row>
-            </card>
-          </section>
-        </block>
-      </blocks>
-    </page>
-  </main>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+  </head>
+  <body>
+    <main>
+      <page route="/gists"></page>
+      <page route="/gists/code"></page>
+      <page class="active" route="/gists/user">
+        <blocks auth="false">
+          <header>
+            <section>
+              <card>
+                <row>
+                  <box css-margin-right="auto">
+                    <a>
+                      <i>
+                        <con></con>
+                      </i>
+                      <text>Gists</text>
+                    </a>
+                  </box>
+                  <box>
+                    <a>
+                      <i>
+                        <con></con>
+                      </i>
+                    </a>
+                  </box>
+                  <box>
+                    <a>
+                      <i>
+                        <con></con>
+                      </i>
+                    </a>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </header>
+          <block>
+            <section>
+              <card css-text-align="center">
+                <column>
+                  <box>
+                    <form css-flex-direction="column">
+                      <text>Enter GitHub Access Key</text>
+                      <input type="text">
+                      <input type="submit">
+                    </form>
+                  </box>
+                  <box>
+                    <section>
+                      <text>or</text>
+                    </section>
+                  </box>
+                  <box>
+                    <row>
+                      <ico><n></n></ico>
+                      <text>Signin with GitHub
+                    </row>
+                  </box>
+                </column>
+              </card>
+          </block>
+        </blocks>
+        <blocks auth="true">
+          <block>
+            <section>
+              <card>
+                <row>
+                  <picture><img></picture>
+                  <text>username</text>
+                </row>
+              </card>
+            </section>
+          </block>
+        </blocks>
+      </page>
+    </main>
+  </body>
+</html>
