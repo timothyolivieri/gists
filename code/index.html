@@ -1,7 +1,46 @@
-<body>
-  <main>
-    <page route="/gists"></page>
-    <page class="active" route="/gists/code"></page>
-    <page route="/gists/user"></page>
-  </main>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+  </head>
+  <body>
+    <main>
+      <page route="/gists"></page>
+      <page class="active" route="/gists/code">
+        <blocks>
+          <block css-display="none" css-dw480px-display="flex">
+            <section>
+              <card>
+                <row>
+                  <box>
+                    <row>
+                      <text>HTML</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>CSS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>JS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </block>
+          <block></block>
+        </blocks>
+      </page>
+      <page route="/gists/user"></page>
+    </main>
+  </body>
+</html>
