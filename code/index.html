@@ -37,7 +37,29 @@
               </card>
             </section>
           </block>
-          <block></block>
+          <block>
+            <section css-flex-direction="row">
+              <card>
+                <section css-flex-direction="column">
+                  <box>
+                    <header>HTML</header>
+                    <section id="CodeMirrorHTML"></section>
+                  </box>
+                  <box>
+                    <header>CSS</header>
+                    <section id="CodeMirrorCSS"></section>
+                  </box>
+                  <box>
+                    <header>JS</header>
+                    <section id="CodeMirrorJS"></section>
+                  </box>
+                </section>
+              </card>
+              <card>
+                <iframe id="iframe-code"></iframe>
+              </card>
+            </section>
+          </block>
         </blocks>
       </page>
       <page route="/gists/user"></page>
