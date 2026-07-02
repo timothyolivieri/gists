@@ -25,3 +25,31 @@
 [css-border-radius="20px"] {
   border-radius: 20px;
 }
+
+[css-line-height="72px"] {
+  line-height: 72px;
+}
+
+[css-height="20px"] {
+  height: 20px;
+}
+
+[css-width="20px"] {
+  width: 20px;
+}
+
+[css-background="black"] {
+  background: black;
+}
+
+[css-color="white"] {
+  color: white;
+}
+
+[css-line-height="40px"] {
+  line-height: 40px;
+}
+
+[css-width="200px"] {
+  width: 200px;
+}
