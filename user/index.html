@@ -3,13 +3,66 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
+    <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code</title>
+    <title>Desktop</title>
   </head>
   <body>
     <main>
       <page route="/gists"></page>
-      <page route="/gists/code"></page>
+      <page route="/gists/code">
+        <blocks>
+          <block css-display="none" css-dw480px-display="flex">
+            <section>
+              <card>
+                <row>
+                  <box>
+                    <row>
+                      <text>HTML</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>CSS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>JS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </block>
+          <block>
+            <section css-flex-direction="row">
+              <card>
+                <section css-flex-direction="column">
+                  <box>
+                    <header>HTML</header>
+                    <section id="CodeMirrorHTML"></section>
+                  </box>
+                  <box>
+                    <header>CSS</header>
+                    <section id="CodeMirrorCSS"></section>
+                  </box>
+                  <box>
+                    <header>JS</header>
+                    <section id="CodeMirrorJS"></section>
+                  </box>
+                </section>
+              </card>
+              <card>
+                <iframe id="iframe-code"></iframe>
+              </card>
+            </section>
+          </block>
+        </blocks>
+      </page>
       <page class="active" route="/gists/user">
         <blocks auth="false">
           <header>
@@ -18,39 +71,42 @@
                 <row>
                   <box css-margin-right="auto">
                     <a>
-                      <i>
-                        <con></con>
-                      </i>
+                      <ico>
+                        <n></n>
+                      </ico>
                       <text>Gists</text>
                     </a>
                   </box>
                   <box>
                     <a>
-                      <i>
-                        <con></con>
-                      </i>
+                      <ico>
+                        <n></n>
+                      </ico>
                     </a>
                   </box>
                   <box>
                     <a>
-                      <i>
-                        <con></con>
-                      </i>
+                      <ico>
+                        <n></n>
+                      </ico>
                     </a>
                   </box>
                 </row>
               </card>
             </section>
           </header>
-          <block>
+          <block css-height="100%" css-min-height="240px">
             <section>
-              <card css-text-align="center">
+              <card css-margin="20px auto" css-text-align="center">
                 <column>
                   <box>
-                    <form css-flex-direction="column">
-                      <text>Enter GitHub Access Key</text>
-                      <input type="text">
-                      <input type="submit">
+                    <header css-font-size="22px">Enter GitHub Access Key</header>
+                    <form css-flex-direction="column">                      
+                      <input css-border="1px solid black" css-border-radius="20px" css-width="100%" type="password">
+                      <ico>
+                        <n></n>
+                        <input type="submit">
+                      </ico>
                     </form>
                   </box>
                   <box>
@@ -66,7 +122,6 @@
                   </box>
                 </column>
               </card>
-            </section>
           </block>
         </blocks>
         <blocks auth="true">
