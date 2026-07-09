@@ -54,6 +54,18 @@
   color: white;
 }
 
+[css-z-index="12"] {
+  z-index: 12;
+}
+
+[css-position="fixed"] {
+  position: fixed;
+}
+
+[css-margin-right="auto"] {
+  margin-right: auto;
+}
+
 [css-line-height="40px"] {
   line-height: 40px;
 }
