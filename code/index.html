@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desktop</title>
+    <title>Code</title>
   </head>
   <body>
     <main>
@@ -40,23 +40,23 @@
           </block>
           <block>
             <section css-flex-direction="row">
-              <card>
+              <card css-width="320px">
                 <section css-flex-direction="column">
-                  <box>
+                  <box css-height="calc(100%/3)">
                     <header>HTML</header>
                     <section id="CodeMirrorHTML"></section>
                   </box>
-                  <box>
+                  <box css-height="calc(100%/3)">
                     <header>CSS</header>
                     <section id="CodeMirrorCSS"></section>
                   </box>
-                  <box>
+                  <box css-height="calc(100%/3)">
                     <header>JS</header>
                     <section id="CodeMirrorJS"></section>
                   </box>
                 </section>
               </card>
-              <card>
+              <card css-flex="1">
                 <iframe id="iframe-code"></iframe>
               </card>
             </section>
