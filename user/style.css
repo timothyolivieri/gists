@@ -10,12 +10,20 @@
   text-align: center;
 }
 
+[css-margin="20px auto"] {
+  margin: 20px auto;
+}
+
 [css-margin="auto 20px"] {
   margin: auto 20px;
 }
 
+[css-margin="auto"] {
+  margin: auto;
+}
+
 [css-width="100%"] {
-  css-width: 100%;
+  width: 100%;
 }
 
 [css-border="1px solid black"] {
@@ -67,3 +75,8 @@
 [css-justify-content="center"] {
   justify-content: center;
 }
+
+[css-line-height="50px"] {
+  line-height: 50px;
+}
+
