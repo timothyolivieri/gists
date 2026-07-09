@@ -10,8 +10,8 @@
   text-align: center;
 }
 
-[css-margin="20px auto"] {
-  margin: 20px auto;
+[css-margin="auto 20px"] {
+  margin: auto 20px;
 }
 
 [css-width="100%"] {
@@ -52,4 +52,18 @@
 
 [css-width="200px"] {
   width: 200px;
+}
+
+[css-width="440px"] {
+  width: 440px;
+}
+
+@media screen and (max-width: 480px) {
+  [css-dw480px-width="280px"] {
+    width: 280px;
+  } 
+}
+
+[css-justify-content="center"] {
+  justify-content: center;
 }
