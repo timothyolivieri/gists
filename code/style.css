@@ -1,3 +1,15 @@
+[css-flex="1"] {
+  css-flex: 1;
+}
+
+[css-width="320px"] {
+  width: 320px;
+}
+
 [css-display="none"] {
   display: none;
+}
+
+[css-height="calc(100%/3)"] {
+  height: calc(100%/3)
 }
