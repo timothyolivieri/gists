@@ -6,10 +6,42 @@
   width: 320px;
 }
 
+[css-height="100%"] {
+  height: 100%;
+}
+
 [css-display="none"] {
   display: none;
 }
 
 [css-height="calc(100%/3)"] {
   height: calc(100%/3)
+}
+
+[css-margin-left="auto"] {
+  margin-left: auto;
+}
+
+.gg-menu {
+  transform: scale(var(--ggs, 1));
+}
+.gg-menu,
+.gg-menu::after,
+.gg-menu::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 3px;
+  background: currentColor;
+}
+.gg-menu::after,
+.gg-menu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+}
+.gg-menu::after {
+  top: 6px;
 }
