@@ -30,6 +30,22 @@
   margin-left: auto;
 }
 
+[css-width="5px"] {
+  width: 5px;
+}
+
+[css-border-left="1px solid black"] {
+  border-left: 1px solid black;
+}
+
+[css-border-right="1px solid black"] {
+  border-right: 1px solid black;
+}
+
+[css-border-bottom="1px solid black"] {
+  border-bottom: 1px solid black;
+}
+
 .gg-menu {
   transform: scale(var(--ggs, 1));
 }
