@@ -1,5 +1,13 @@
 [css-flex="1"] {
-  css-flex: 1;
+  flex: 1;
+}
+
+[css-flex-direction="row"] {
+  flex-direction: row;
+}
+
+[css-flex-direction="column"] {
+  flex-direction: column;
 }
 
 [css-width="320px"] {
