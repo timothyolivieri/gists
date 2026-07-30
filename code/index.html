@@ -12,6 +12,29 @@
       <page route="/gists"></page>
       <page class="active" route="/gists/code">
         <blocks>
+          <header css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12">
+            <section>
+              <card>
+                <row>
+                  <box css-margin-right="auto">
+                    <a>
+                      <ico>
+                        <n></n>
+                      </ico>
+                      <text>Gists</text>
+                    </a>
+                  </box>
+                  <box css-margin-left="auto">
+                    <a>
+                      <ico>
+                        <n class="gg-menu"></n>
+                      </ico>
+                    </a>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </header>
           <block css-display="none" css-dw480px-display="flex">
             <section>
               <card>
@@ -40,7 +63,7 @@
           </block>
           <block>
             <section css-flex-direction="row">
-              <card css-width="320px">
+              <card css-width="320px" css-height="100%">
                 <section css-flex-direction="column">
                   <box css-height="calc(100%/3)">
                     <header>HTML</header>
