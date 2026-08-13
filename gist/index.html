@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/theme/abcdef.min.css' rel='stylesheet'>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/rest.js/15.0.2/octokit-rest.min.js" integrity="sha512-Sr9H+XjDgAtZDtuPsMTJ5iWtXksOZlx6XmF2tpZi7iSr3IWqQsGj86l7lZZwpXHEpXmvv05luwfiOUO0wYYpWA==" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/fold/foldcode.js" integrity="sha512-VW3/y44dtyFYaOikJ1zSwM1o+/ErlidCA7PN3jPYEyHR5RNvP+NvWqOxrqf9/k0Y5yFLtdurypKFwm+jE8lgkA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/fold/foldgutter.min.js" integrity="sha512-Yhrn0zU9jQBETdu3RUw6Rl+pSPWNl8xDxjiJkds2xNQapiaCiBX0et1ecl8VqUM421uWRwoa0ynzZ5knY8zt9w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/fold/indent-fold.min.js" integrity="sha512-Q6g5qQfa6ko+Y+0BwAciUAq01qxgfScTPFP2Fsrr+zIrTe5Yq3tN5xaA919MmBs/1RMz/jyctknYavjc3k+/xg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/css/css.min.js" integrity="sha512-rsFXL+3jYau54xgkx2FtVPo+yRM4vLMEU9VBWl8hZX+t8MEYzGBHeHh5ELv04uthHqix7Dhw2o4KgQ1c+s6dEQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js" integrity="sha512-+tn2IYnLwD2J9p6Nrn/Dl7ag9lluHA0GAblT/vnMiJV8DU/iDsldgf+9XbEqZUee2ThyDtfmSDb+IDZ9u7jrSA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/htmlmixed/htmlmixed.min.js" integrity="sha512-IC+qg9ITjo2CLFOTQcO6fBbvisTeJmiT5D5FnXsCptqY8t7/UxWhOorn2X+GHkoD1FNkyfnMJujt5PcB7qutyA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/xml/xml.min.js" integrity="sha512-XPih7uxiYsO+igRn/NA2A56REKF3igCp5t0W1yYhddwHsk70rN1bbbMzYkxrvjQ6uk+W3m+qExHIJlFzE6m5eg==" crossorigin="anonymous"></script>
+    <title>Code</title>
+  </head>
+  <body>
+    <main>
+      <page route="/gists"></page>
+      <page class="active" route="/gists/code">
+        <blocks>
+          <header css-border-bottom="1px solid black" css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12">
+            <section>
+              <card>
+                <row>
+                  <box css-margin-right="auto">
+                    <a href="../">
+                      <ico>
+                        <n class="gg-home"></n>
+                      </ico>
+                      <text>Gists</text>
+                    </a>
+                  </box>
+                  <box css-margin-left="auto">
+                    <a>
+                      <ico>
+                        <n class="gg-menu"></n>
+                      </ico>
+                    </a>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </header>
+          <block css-display="none" css-dw480px-display="flex">
+            <section>
+              <card>
+                <row>
+                  <box>
+                    <row>
+                      <text>HTML</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>CSS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>JS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </block>
+          <block css-flex="1">
+            <section css-flex-direction="row">
+              <card css-width="320px" css-height="100%">
+                <section css-flex-direction="column">
+                  <box css-height="calc(100%/3)">
+                    <header>HTML</header>
+                    <section id="CodeMirrorHTML"></section>
+                  </box>
+                  <box css-height="calc(100%/3)">
+                    <header>CSS</header>
+                    <section id="CodeMirrorCSS"></section>
+                  </box>
+                  <box css-height="calc(100%/3)">
+                    <header>JS</header>
+                    <section id="CodeMirrorJS"></section>
+                  </box>
+                </section>
+              </card>
+              <card css-flex="1" css-flex-direction="row">
+                <line css-width="5px" css-border-left="1px solid black" css-border-right="1px solid black" css-height="100%"></line>
+                <iframe id="iframe-code"></iframe>
+              </card>
+            </section>
+          </block>
+        </blocks>
+      </page>
+      <page route="/gists/user"></page>
+    </main>
+  </body>
+</html>
