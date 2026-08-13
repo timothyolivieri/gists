@@ -1,0 +1,122 @@
+[css-flex="1"] {
+  flex: 1;
+}
+
+[css-flex-direction="row"] {
+  flex-direction: row;
+}
+
+[css-flex-direction="column"] {
+  flex-direction: column;
+}
+
+[css-width="320px"] {
+  width: 320px;
+}
+
+[css-height="100%"] {
+  height: 100%;
+}
+
+[css-display="none"] {
+  display: none;
+}
+
+[css-height="calc(100%/3)"] {
+  height: calc(100%/3)
+}
+
+[css-margin-left="auto"] {
+  margin-left: auto;
+}
+
+[css-width="5px"] {
+  width: 5px;
+}
+
+[css-border-left="1px solid black"] {
+  border-left: 1px solid black;
+}
+
+[css-border-right="1px solid black"] {
+  border-right: 1px solid black;
+}
+
+[css-border-bottom="1px solid black"] {
+  border-bottom: 1px solid black;
+}
+
+.gg-menu {
+  transform: scale(var(--ggs, 1));
+}
+.gg-menu,
+.gg-menu::after,
+.gg-menu::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 3px;
+  background: currentColor;
+}
+.gg-menu::after,
+.gg-menu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+}
+.gg-menu::after {
+  top: 6px;
+}
+
+.gg-home {
+  background:
+    linear-gradient(to left, currentColor 5px, transparent 0) no-repeat 0
+      bottom/4px 2px,
+    linear-gradient(to left, currentColor 5px, transparent 0) no-repeat right
+      bottom/4px 2px;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 18px;
+  height: 14px;
+  border: 2px solid;
+  border-top: 0;
+  border-bottom: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: -2px;
+}
+.gg-home::after,
+.gg-home::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+.gg-home::before {
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-top-left-radius: 4px;
+  transform: rotate(45deg);
+  top: -5px;
+  border-radius: 3px;
+  width: 14px;
+  height: 14px;
+  left: 0;
+}
+.gg-home::after {
+  width: 8px;
+  height: 10px;
+  border: 2px solid;
+  border-radius: 100px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0;
+  left: 3px;
+  bottom: 0;
+}
