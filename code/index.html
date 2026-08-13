@@ -12,7 +12,7 @@
       <page route="/gists"></page>
       <page class="active" route="/gists/code">
         <blocks>
-          <header css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12">
+          <header css-border-bottom="1px solid black" css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12">
             <section>
               <card>
                 <row>
@@ -79,7 +79,7 @@
                   </box>
                 </section>
               </card>
-              <card css-flex="1">
+              <card css-flex="1" css-flex-direction="row">
                 <line css-width="5px" css-border-left="1px solid black" css-border-right="1px solid black" css-height="100%"></line>
                 <iframe id="iframe-code"></iframe>
               </card>
