@@ -124,3 +124,8 @@
   left: 3px;
   bottom: 0;
 }
+
+box .CodeMirror {
+    width: 100%;
+    height: 100%;
+}
