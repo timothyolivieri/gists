@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "code": {
 
-        "elem": document.getElementById("preview-code")
+        "elem": document.getElementById("iframe-code")
 
       }
 
