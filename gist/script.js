@@ -33,10 +33,86 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     }
+  }
 
-  };
-
+  
   pvw();
+  
+  
+  cm.html = CodeMirror(dom.html, {
+
+    lineNumbers: true,
+
+    lineWrapping: true,
+
+    htmlMode: true,
+
+    mode: 'xml',  
+
+    styleActiveLine: true,
+
+    theme: 'abcdef',
+
+    matchBrackets: true
+
+  });
+
+  cm.html.on("change",(change) => { 
+
+    upd();
+
+  });
+  
+    
+  
+  cm.css = CodeMirror(dom.css, {
+
+    lineNumbers: true,
+
+    lineWrapping: true,
+
+    mode: 'css',  
+
+    styleActiveLine: true,
+
+    theme: 'abcdef',
+
+    matchBrackets: true
+
+  });
+
+  cm.css.on("change",(change) => { 
+
+    upd();
+
+  });
+
+    
+  
+  cm.js = CodeMirror(dom.js, {
+
+    lineNumbers: true,
+
+    lineWrapping: true,
+
+    mode: 'javascript',  
+
+    styleActiveLine: true,
+
+    theme: 'abcdef',
+
+    matchBrackets: true
+
+  });
+
+  cm.js.on("change",(change) => {
+
+    upd();
+
+  });
+
+});
+
 
 
   function getBlobURL(code, type) {
@@ -81,15 +157,15 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function pvw() {
   
-    dom.iframe.code.doc = document.getElementById("preview-code").contentDocument;
+    dom.iframe.code.doc = document.getElementById("iframe-code").contentDocument;
   
-    dom.iframe.code.head = document.getElementById("preview-code").contentDocument.querySelector('head');
+    dom.iframe.code.head = document.getElementById("iframe-code").contentDocument.querySelector('head');
   
     dom.iframe.code.head.innerHTML = '<style id="style"></style>';
   
     dom.iframe.code.style = dom.iframe.code.head.querySelector('style');   
   
-    dom.iframe.code.body = document.getElementById("preview-code").contentDocument.querySelector('body');
+    dom.iframe.code.body = document.getElementById("iframe-code").contentDocument.querySelector('body');
   
   }
   
@@ -110,5 +186,3 @@ document.addEventListener("DOMContentLoaded", () => {
     dom.iframe.code.elem.src = page;
   
   }
-
-})
