@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     styleActiveLine: true,
 
-    theme: 'abcdef',
-
     matchBrackets: true
 
   });
@@ -75,8 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     styleActiveLine: true,
 
-    theme: 'abcdef',
-
     matchBrackets: true
 
   });
@@ -98,8 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mode: 'javascript',  
 
     styleActiveLine: true,
-
-    theme: 'abcdef',
 
     matchBrackets: true
 
