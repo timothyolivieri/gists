@@ -30,6 +30,10 @@
   border: 1px solid black;
 }
 
+[css-border-bottom="1px solid black"] {
+  border-bottom: 1px solid black;
+}
+
 [css-border-radius="20px"] {
   border-radius: 20px;
 }
