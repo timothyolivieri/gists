@@ -5,18 +5,31 @@
     <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gists</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/theme/abcdef.min.css' rel='stylesheet'>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/rest.js/15.0.2/octokit-rest.min.js" integrity="sha512-Sr9H+XjDgAtZDtuPsMTJ5iWtXksOZlx6XmF2tpZi7iSr3IWqQsGj86l7lZZwpXHEpXmvv05luwfiOUO0wYYpWA==" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/fold/foldcode.js" integrity="sha512-VW3/y44dtyFYaOikJ1zSwM1o+/ErlidCA7PN3jPYEyHR5RNvP+NvWqOxrqf9/k0Y5yFLtdurypKFwm+jE8lgkA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/fold/foldgutter.min.js" integrity="sha512-Yhrn0zU9jQBETdu3RUw6Rl+pSPWNl8xDxjiJkds2xNQapiaCiBX0et1ecl8VqUM421uWRwoa0ynzZ5knY8zt9w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/fold/indent-fold.min.js" integrity="sha512-Q6g5qQfa6ko+Y+0BwAciUAq01qxgfScTPFP2Fsrr+zIrTe5Yq3tN5xaA919MmBs/1RMz/jyctknYavjc3k+/xg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/css/css.min.js" integrity="sha512-rsFXL+3jYau54xgkx2FtVPo+yRM4vLMEU9VBWl8hZX+t8MEYzGBHeHh5ELv04uthHqix7Dhw2o4KgQ1c+s6dEQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js" integrity="sha512-+tn2IYnLwD2J9p6Nrn/Dl7ag9lluHA0GAblT/vnMiJV8DU/iDsldgf+9XbEqZUee2ThyDtfmSDb+IDZ9u7jrSA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/htmlmixed/htmlmixed.min.js" integrity="sha512-IC+qg9ITjo2CLFOTQcO6fBbvisTeJmiT5D5FnXsCptqY8t7/UxWhOorn2X+GHkoD1FNkyfnMJujt5PcB7qutyA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/xml/xml.min.js" integrity="sha512-XPih7uxiYsO+igRn/NA2A56REKF3igCp5t0W1yYhddwHsk70rN1bbbMzYkxrvjQ6uk+W3m+qExHIJlFzE6m5eg==" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <title>Code</title>
   </head>
   <body>
     <main>
-      <page class="active" route="/gists">
+      <page route="/gists"></page>
+      <page class="active" route="/gists/code">
         <blocks>
           <header css-border-bottom="1px solid black" css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12">
             <section>
               <card>
                 <row>
                   <box css-margin-right="auto">
-                    <a>
+                    <a href="../">
                       <ico>
                         <n class="gg-home"></n>
                       </ico>
@@ -24,16 +37,9 @@
                     </a>
                   </box>
                   <box css-margin-left="auto">
-                    <a href="./gist">
+                    <a>
                       <ico>
-                        <n class="gg-math-plus"></n>
-                      </ico>
-                    </a>
-                  </box>
-                  <box>
-                    <a href="./user">
-                      <ico>
-                        <n class="gg-user"></n>
+                        <n class="gg-menu"></n>
                       </ico>
                     </a>
                   </box>
@@ -41,30 +47,6 @@
               </card>
             </section>
           </header>
-          <block>
-            <column>
-              <card>
-                <row>
-                  <box>
-                    <section>
-                      <picture><img></picture>
-                    </section>
-                  </box>
-                  <box>
-                    <column>
-                      <line></line>
-                      <line></line>
-                      <line></line>
-                    </column>
-                  </box>
-                </row>
-              </card>
-            </column>
-          </block>
-        </blocks>
-      </page>
-      <page route="/gists/code">
-        <blocks>
           <block css-display="none" css-dw480px-display="flex">
             <section>
               <card>
@@ -91,102 +73,33 @@
               </card>
             </section>
           </block>
-          <block>
+          <block css-flex="1">
             <section css-flex-direction="row">
-              <card>
+              <card css-width="320px" css-height="100%">
                 <section css-flex-direction="column">
-                  <box>
-                    <header>HTML</header>
-                    <section id="CodeMirrorHTML"></section>
+                  <box css-height="calc(100%/3)">
+                    <header css-line-height="50px">HTML</header>
+                    <section css-border="1px solid black" css-width="calc(100% - 12px)" css-margin="0 5px" id="CodeMirrorHTML"></section>
                   </box>
-                  <box>
-                    <header>CSS</header>
-                    <section id="CodeMirrorCSS"></section>
+                  <box css-height="calc(100%/3)">
+                    <header css-line-height="50px">CSS</header>
+                    <section css-border="1px solid black" css-width="calc(100% - 12px)" css-margin="0 5px" id="CodeMirrorCSS"></section>
                   </box>
-                  <box>
-                    <header>JS</header>
-                    <section id="CodeMirrorJS"></section>
+                  <box css-height="calc(100%/3)">
+                    <header css-line-height="50px">JS</header>
+                    <section css-border="1px solid black" css-width="calc(100% - 12px)" css-margin="0 5px" id="CodeMirrorJS"></section>
                   </box>
                 </section>
               </card>
-              <card>
-                <iframe id="iframe-code"></iframe>
+              <card css-flex="1" css-flex-direction="row">
+                <line css-width="5px" css-border-left="1px solid black" css-border-right="1px solid black" css-height="100%"></line>
+                <iframe css-flex="1" id="iframe-code"></iframe>
               </card>
             </section>
           </block>
         </blocks>
       </page>
-      <page route="/gists/user">
-        <blocks auth="false">
-          <header>
-            <section>
-              <card>
-                <row>
-                  <box css-margin-right="auto">
-                    <a>
-                      <i>
-                        <con></con>
-                      </i>
-                      <text>Gists</text>
-                    </a>
-                  </box>
-                  <box>
-                    <a>
-                      <i>
-                        <con></con>
-                      </i>
-                    </a>
-                  </box>
-                  <box>
-                    <a>
-                      <i>
-                        <con></con>
-                      </i>
-                    </a>
-                  </box>
-                </row>
-              </card>
-            </section>
-          </header>
-          <block>
-            <section>
-              <card css-text-align="center">
-                <column>
-                  <box>
-                    <form css-flex-direction="column">
-                      <text>Enter GitHub Access Key</text>
-                      <input type="text">
-                      <input type="submit">
-                    </form>
-                  </box>
-                  <box>
-                    <section>
-                      <text>or</text>
-                    </section>
-                  </box>
-                  <box>
-                    <row>
-                      <ico><n></n></ico>
-                      <text>Signin with GitHub
-                    </row>
-                  </box>
-                </column>
-              </card>
-          </block>
-        </blocks>
-        <blocks auth="true">
-          <block>
-            <section>
-              <card>
-                <row>
-                  <picture><img></picture>
-                  <text>username</text>
-                </row>
-              </card>
-            </section>
-          </block>
-        </blocks>
-      </page>
+      <page route="/gists/user"></page>
     </main>
   </body>
 </html>
