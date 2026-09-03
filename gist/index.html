@@ -2,41 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
     <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gists</title>
   </head>
   <body>
     <main>
-      <page route="/gists"></page>
-      <page route="/gists/code"></page>
-      <page class="active" route="/gists/user">
-        <blocks auth="false">
-          <header css-background="white" css-border-bottom="1px solid black" css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12345">
+      <page class="active" route="/gists">
+        <blocks>
+          <header css-border-bottom="1px solid black" css-position="fixed" css-width="100%" css-justify-content="center" css-z-index="12">
             <section>
               <card>
                 <row>
                   <box css-margin-right="auto">
-                    <a href="../">
+                    <a>
                       <ico>
                         <n class="gg-home"></n>
                       </ico>
                       <text>Gists</text>
                     </a>
                   </box>
-                  <box>
-                    <a>
+                  <box css-margin-left="auto">
+                    <a href="./gist">
                       <ico>
-                        <n></n>
+                        <n class="gg-math-plus"></n>
                       </ico>
                     </a>
                   </box>
                   <box>
-                    <a>
+                    <a href="./user">
                       <ico>
-                        <n></n>
+                        <n class="gg-user"></n>
                       </ico>
                     </a>
                   </box>
@@ -44,30 +41,134 @@
               </card>
             </section>
           </header>
-          <block css-padding="70px 0" css-height="100%" css-min-height="240px" css-justify-content="center">
-            <section>
-              <card css-margin="auto" css-text-align="center" css-width="440px" css-dw480px-width="280px">
-                <column>
+          <block>
+            <column>
+              <card>
+                <row>
                   <box>
-                    <header css-font-size="24px" css-line-height="50px">Enter GitHub Access Key</header>
-                    <form css-display="flex" css-border="1px solid black" css-border-radius="40px" css-font-size="0" css-flex-direction="column" onsubmit="mvc.c.token(event)">                      
-                      <input css-font-size="20px" css-line-height="40px" css-flex="1" css-width="calc(100% - 40px)" type="password">
-                      <ico css-width="40px" css-height="40px">
-                        <n class="gg-chevron-right"></n>
-                        <input type="submit">
-                      </ico>
-                    </form>
-                  </box>
-                  <box css-line-height="72px">
                     <section>
-                      <text css-margin="auto">or</text>
+                      <picture><img></picture>
                     </section>
                   </box>
-                  <box css-justify-content="center">
-                    <a css-color="white" css-background="black" css-border-radius="20px" css-line-height="40px" css-margin="auto" css-width="200px">
-                      <ico css-height="20px" css-width="20px"><n></n></ico>
-                      <text>Signin with GitHub
+                  <box>
+                    <column>
+                      <line></line>
+                      <line></line>
+                      <line></line>
+                    </column>
+                  </box>
+                </row>
+              </card>
+            </column>
+          </block>
+        </blocks>
+      </page>
+      <page route="/gists/code">
+        <blocks>
+          <block css-display="none" css-dw480px-display="flex">
+            <section>
+              <card>
+                <row>
+                  <box>
+                    <row>
+                      <text>HTML</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>CSS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                  <box>
+                    <row>
+                      <text>JS</text>
+                      <i><con></con></i>
+                    </row>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </block>
+          <block>
+            <section css-flex-direction="row">
+              <card>
+                <section css-flex-direction="column">
+                  <box>
+                    <header>HTML</header>
+                    <section id="CodeMirrorHTML"></section>
+                  </box>
+                  <box>
+                    <header>CSS</header>
+                    <section id="CodeMirrorCSS"></section>
+                  </box>
+                  <box>
+                    <header>JS</header>
+                    <section id="CodeMirrorJS"></section>
+                  </box>
+                </section>
+              </card>
+              <card>
+                <iframe id="iframe-code"></iframe>
+              </card>
+            </section>
+          </block>
+        </blocks>
+      </page>
+      <page route="/gists/user">
+        <blocks auth="false">
+          <header>
+            <section>
+              <card>
+                <row>
+                  <box css-margin-right="auto">
+                    <a>
+                      <i>
+                        <con></con>
+                      </i>
+                      <text>Gists</text>
                     </a>
+                  </box>
+                  <box>
+                    <a>
+                      <i>
+                        <con></con>
+                      </i>
+                    </a>
+                  </box>
+                  <box>
+                    <a>
+                      <i>
+                        <con></con>
+                      </i>
+                    </a>
+                  </box>
+                </row>
+              </card>
+            </section>
+          </header>
+          <block>
+            <section>
+              <card css-text-align="center">
+                <column>
+                  <box>
+                    <form css-flex-direction="column">
+                      <text>Enter GitHub Access Key</text>
+                      <input type="text">
+                      <input type="submit">
+                    </form>
+                  </box>
+                  <box>
+                    <section>
+                      <text>or</text>
+                    </section>
+                  </box>
+                  <box>
+                    <row>
+                      <ico><n></n></ico>
+                      <text>Signin with GitHub
+                    </row>
                   </box>
                 </column>
               </card>
