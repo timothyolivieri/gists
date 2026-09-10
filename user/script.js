@@ -1,8 +1,9 @@
 window.mvc = {};
 mvc.model = {};
 mvc.view = {};
-mvc.view['/user'] = () => {
-  console.log('Getting My Gists');
+mvc.view['/user'] = async() => {
+  var gists = await github.gists.list();
+  console.log('Getting My Gists', {gists});
 }
 mvc.controller = {};
 mvc.controller.logout = () => {
