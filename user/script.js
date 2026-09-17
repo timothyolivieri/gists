@@ -1,9 +1,10 @@
 window.mvc = {};
 mvc.model = {};
 mvc.view = {};
-mvc.view['/user'] = async() => {
-  var gists = await github.gists.list();
-  console.log('Getting My Gists', {gists});
+mvc.view['/user'] = async(token) => {
+  console.log(token);
+  var gists = await github.gists.list(null, token);
+  console.log('Getting My Gists', {token, gists});
 }
 mvc.controller = {};
 mvc.controller.logout = () => {
@@ -16,12 +17,12 @@ mvc.controller.token = (event) => {
   alert("Checking token... " + githubToken);
   localStorage.setItem('github-token', githubToken);
   document.body.setAttribute("auth", githubToken);
-  mvc.view['/user']();
+  mvc.view['/user'](githubToken);
 };
 document.addEventListener("DOMContentLoaded", () => {
   var githubToken = localStorage.getItem("github-token");
   if(githubToken) {
     document.body.setAttribute("auth", githubToken); 
-    mvc.view['/user']();   
+    mvc.view['/user'](githubToken);   
   }
 });
