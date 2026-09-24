@@ -94,6 +94,10 @@
   padding: 70px 0;
 }
 
+[css-padding-top="50px"] {
+  padding-top: 50px;
+}
+
 [css-position="fixed"] {
   position: fixed;
 }
