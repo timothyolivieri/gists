@@ -15,13 +15,13 @@ mvc.controller.token = async(event) => {
   event.preventDefault();
   var githubToken = event.target.querySelector('input[type="password"]').value;
   //alert(githubToken);
-  var user = await github.users.token(githubToken);
-  console.log("Checking token... ", {githubToken, user});
-  if(user) {
+  try {
+    var user = await github.users.token(githubToken);
+    console.log("Checking token... ", {githubToken, user});
     localStorage.setItem('github-token', githubToken);
     document.body.setAttribute("auth", githubToken);
     mvc.view['/user'](githubToken);
-  } else {
+  } catch(e) {
     alert('Invalid Access Token');
   }
 };
