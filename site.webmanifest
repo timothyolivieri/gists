@@ -1,0 +1,12 @@
+{
+  "description": "A social platform for frontend snippets.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "570x570",
+      "type": "image/png"
+    }
+  ],
+  "name": "Gists",
+  "short_name": "gists"
+}
