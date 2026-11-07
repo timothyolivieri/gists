@@ -10,6 +10,38 @@
   flex-direction: column;
 }
 
+[css-background="white"] {
+  background: white;
+}
+
+[css-padding="10px"] {
+  padding: 10px;
+}
+
+[css-position="fixed"] {
+  position: fixed;
+}
+
+[css-z-index="123"] {
+  z-index: 123;
+}
+
+[css-right="5px"] {
+  right: 5px;
+}
+
+[css-top="45px"] {
+  top: 45px;
+}
+
+[css-box-shadow="0 0 10px -3px"] {
+  box-shadow: 0 0 10px -3px;
+}
+
+[css-font-weight="bolder"] {
+  font-weight: bolder;
+}
+
 [css-width="320px"] {
   width: 320px;
 }
@@ -38,8 +70,16 @@
   width: 5px;
 }
 
+[css-width="100%"] {
+  width: 100%;
+}
+
 [css-width="calc(100% - 12px)"] {
   width: calc(100% - 12px);
+}
+
+[css-line-height="24px"] {
+  line-height: 24px;
 }
 
 [css-line-height="50px"] {

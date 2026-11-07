@@ -1,5 +1,8 @@
-window.addEventListener("load", async(event) => {
-  
+window.mvc = {};
+mvc.model = {};
+mvc.view = {};
+mvc.view['/gist'] = async(token) => {
+      
   window.cm = {};
 
   window.dom = {
@@ -35,17 +38,13 @@ window.addEventListener("load", async(event) => {
     }
   }
   
-  var githubToken = localStorage.getItem("github-token");
-  
   var uri = window.location.pathname;
   var search = window.location.search;
   var url = new URL(uri+search,location.origin);
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   const allParams = Object.fromEntries(params);
-  console.log(41, {url, search, id, githubToken, allParams});
-
-
+  console.log(41, {url, search, id, token, allParams});
 
   if(id) {
     
@@ -116,7 +115,7 @@ window.addEventListener("load", async(event) => {
     
     try {
       var gist = await github.gists.id(id);
-        console.log(49, {gist});    
+      console.log(49, {gist});    
       if(gist) {
         var keys = Object.keys(gist.files);
         var vals = Object.values(gist.files)
@@ -214,13 +213,29 @@ window.addEventListener("load", async(event) => {
     //pvw();
     
   }
-    
+      
+}
+mvc.controller = {};
+mvc.controller.logout = () => {
+  localStorage.removeItem('github-token');
+  document.body.removeAttribute('auth');
+}
+mvc.controller.menu = target => {
+  var btn = target.closest('a');
+  var nav = btn.nextElementSibling;
+  var display = nav.getAttribute('css-display');
+  display === "none" ? nav.setAttribute("css-display", "flex") : nav.setAttribute("css-display", "none");
+}
 
+document.addEventListener("DOMContentLoaded", async() => {
   
-
+  var githubToken = localStorage.getItem("github-token");
+  if(githubToken) {
+    document.body.setAttribute("auth", githubToken); 
+  }
+  mvc.view['/gist'](githubToken);   
+  
 }, {once: true});
-
-
 
 function getBlobURL(code, type) {
 
