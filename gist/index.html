@@ -46,10 +46,10 @@
                       <a auth="false" href="../user">Login</a>
                       <a auth="true" href="../../users/user">Profile</a>
                       <text>Download</text>
-                      <text auth="true" css-border-bottom="1px solid black">Save</text>
+                      <text auth="true" css-border-bottom="1px solid black" onclick="mvc.controller.save()">Save</text>
                       <a auth="true" href="../user">Your Work</a>
                       <a href="../gist">New Gist</a>
-                      <text auth="true">Logout</text>
+                      <text auth="true" onclick="mvc.controller.logout()">Logout</text>
                     </nav>
                   </box>
                 </row>

@@ -127,12 +127,15 @@ mvc.view['/gist'] = async(token) => {
             var ext = key.split(".")[1];
             if(key == "index.html") {
               cm[ext].setValue(vals[i].content);
+              cm[ext].body = true;
             }
             if(key == "script.js") {
-              cm[ext].setValue(vals[i].content);
+                  cm[ext].setValue(vals[i].content);
+                  cm[ext].body = true;
             }
             if(key == "style.css") {
-              cm[ext].setValue(vals[i].content);
+                  cm[ext].setValue(vals[i].content);
+                  cm[ext].body = true;
             }
             i++;
           } while(i < keys.length)         
@@ -219,12 +222,76 @@ mvc.controller = {};
 mvc.controller.logout = () => {
   localStorage.removeItem('github-token');
   document.body.removeAttribute('auth');
+  window.location.href = '/gists/user';
 }
 mvc.controller.menu = target => {
   var btn = target.closest('a');
   var nav = btn.nextElementSibling;
   var display = nav.getAttribute('css-display');
   display === "none" ? nav.setAttribute("css-display", "flex") : nav.setAttribute("css-display", "none");
+}
+mvc.controller.save = async() => {
+      var html = cm["html"].getValue();
+      var css = cm["css"].getValue();
+      var js = cm["js"].getValue();
+      console.log(234, {html, css, js});
+      
+      var uri = window.location.pathname;
+      var search = window.location.search;
+      var url = new URL(uri+search,location.origin);
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      var files = {};
+      if(html !== "") {
+            files["index.html"] = {
+                  content: html
+            }
+      } else {
+            if(cm["html"].body === true) {
+                  files["index.html"] = {
+                        content: ""
+                  }
+            }
+      }
+      if(css !== "") {
+            files["style.css"] = {
+                  content: css
+            }
+      } else {
+            if(cm["css"].body === true) {
+                  files["style.css"] = {
+                        content: ""
+                  }
+            }
+      }
+      if(js !== "") {
+            files["script.js"] = {
+                  content: js
+            }
+      } else {
+            if(cm["js"].body === true) {
+                  files["script.js"] = {
+                        content: ""
+                  }
+            }
+      }
+      
+      var settings = {
+            body: JSON.stringify({
+                  "files": files
+            }),
+            method: "PATCH"
+      }
+      console.log("Pushing Gist to Git... ", {id, settings}, {files});
+      try {
+            var patch = await github.gists.id(id, settings);
+            console.log(245, {patch});
+            alert("Gist patched successfully!");
+            window.location.reload();
+      } catch(e) {
+            console.log(246, {e})
+      }
 }
 
 document.addEventListener("DOMContentLoaded", async() => {
