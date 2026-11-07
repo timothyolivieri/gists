@@ -276,22 +276,45 @@ mvc.controller.save = async() => {
                   }
             }
       }
-      
-      var settings = {
-            body: JSON.stringify({
-                  "files": files
-            }),
-            method: "PATCH"
+
+      if(id) {
+            var settings = {
+                  body: JSON.stringify({
+                        "files": files
+                  }),
+                  method: "PATCH"
+            }
+            console.log("Pushing Gist to Git... ", {id, settings}, {files});
+            try {
+                  var patch = await github.gists.id(id, settings);
+                  console.log(245, {patch});
+                  alert("Gist patched successfully!");
+                  window.location.reload();
+            } 
+            catch(e) {
+                  console.log(246, {e})
+            }
+      } 
+      else {
+            alert("Creating new gist...")
+            var settings = {
+                  body: JSON.stringify({
+                        "files": files
+                  }),
+                  method: "POST"
+            }
+            console.log("Pushing Gist to Git... ", {settings}, {files});
+            try {
+                  var create = await github.gists.create(settings);
+                  console.log(309, {create});
+                  alert("Gist created successfully!");
+                  window.location.href = "/gists/gist/?id=" + create.id;
+            } 
+            catch(e) {
+                  console.log(246, {e})
+            }
       }
-      console.log("Pushing Gist to Git... ", {id, settings}, {files});
-      try {
-            var patch = await github.gists.id(id, settings);
-            console.log(245, {patch});
-            alert("Gist patched successfully!");
-            window.location.reload();
-      } catch(e) {
-            console.log(246, {e})
-      }
+
 }
 
 document.addEventListener("DOMContentLoaded", async() => {
