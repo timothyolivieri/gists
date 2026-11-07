@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async() => {
+window.addEventListener("load", async(event) => {
   
   window.cm = {};
 
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     }
   }
+  
   var githubToken = localStorage.getItem("github-token");
   
   var uri = window.location.pathname;
@@ -45,7 +46,74 @@ document.addEventListener("DOMContentLoaded", async() => {
   console.log(41, {url, search, id, githubToken, allParams});
 
 
-  if(githubToken) {
+
+  if(id) {
+    
+    cm.html = CodeMirror(dom.html, {
+  
+      lineNumbers: true,
+  
+      lineWrapping: true,
+  
+      htmlMode: true,
+  
+      mode: 'xml',  
+  
+      styleActiveLine: true,
+  
+      matchBrackets: true
+  
+    });
+  
+    cm.html.on("change",(change) => { 
+  
+      upd();
+  
+    });
+      
+    
+    cm.css = CodeMirror(dom.css, {
+  
+      lineNumbers: true,
+  
+      lineWrapping: true,
+  
+      mode: 'css',  
+  
+      styleActiveLine: true,
+  
+      matchBrackets: true
+  
+    });
+  
+    cm.css.on("change",(change) => { 
+  
+      upd();
+  
+    });
+  
+      
+    
+    cm.js = CodeMirror(dom.js, {
+  
+      lineNumbers: true,
+  
+      lineWrapping: true,
+  
+      mode: 'javascript',  
+  
+      styleActiveLine: true,
+  
+      matchBrackets: true
+  
+    });
+  
+    cm.js.on("change",(change) => {
+  
+      upd();
+  
+    });
+    
     try {
       var gist = await github.gists.id(id);
         console.log(49, {gist});    
@@ -58,98 +126,99 @@ document.addEventListener("DOMContentLoaded", async() => {
           do {
             var key = keys[i];
             var ext = key.split(".")[1];
-            console.log(61, key);
             if(key == "index.html") {
               cm[ext].setValue(vals[i].content);
             }
             if(key == "script.js") {
-              dom.js.code = vals[i].content;
               cm[ext].setValue(vals[i].content);
             }
             if(key == "style.css") {
-              dom.css.code = vals[i].content; 
               cm[ext].setValue(vals[i].content);
             }
             i++;
           } while(i < keys.length)         
         }
       }
-    } catch(e) {
+    } 
+    catch(e) {
       
     }
   }
+  else {
 
+    cm.html = CodeMirror(dom.html, {
   
-  pvw();
+      lineNumbers: true,
   
+      lineWrapping: true,
   
-  cm.html = CodeMirror(dom.html, {
-
-    lineNumbers: true,
-
-    lineWrapping: true,
-
-    htmlMode: true,
-
-    mode: 'xml',  
-
-    styleActiveLine: true,
-
-    matchBrackets: true
-
-  });
-
-  cm.html.on("change",(change) => { 
-
-    upd();
-
-  });
+      htmlMode: true,
   
+      mode: 'xml',  
+  
+      styleActiveLine: true,
+  
+      matchBrackets: true
+  
+    });
+  
+    cm.html.on("change",(change) => { 
+  
+      upd();
+  
+    });
     
-  
-  cm.css = CodeMirror(dom.css, {
-
-    lineNumbers: true,
-
-    lineWrapping: true,
-
-    mode: 'css',  
-
-    styleActiveLine: true,
-
-    matchBrackets: true
-
-  });
-
-  cm.css.on("change",(change) => { 
-
-    upd();
-
-  });
-
+      
     
+    cm.css = CodeMirror(dom.css, {
   
-  cm.js = CodeMirror(dom.js, {
+      lineNumbers: true,
+  
+      lineWrapping: true,
+  
+      mode: 'css',  
+  
+      styleActiveLine: true,
+  
+      matchBrackets: true
+  
+    });
+  
+    cm.css.on("change",(change) => { 
+  
+      upd();
+  
+    });
+  
+      
+    
+    cm.js = CodeMirror(dom.js, {
+  
+      lineNumbers: true,
+  
+      lineWrapping: true,
+  
+      mode: 'javascript',  
+  
+      styleActiveLine: true,
+  
+      matchBrackets: true
+  
+    });
+  
+    cm.js.on("change",(change) => {
+  
+      upd();
+  
+    });
+    //pvw();
+    
+  }
+    
 
-    lineNumbers: true,
+  
 
-    lineWrapping: true,
-
-    mode: 'javascript',  
-
-    styleActiveLine: true,
-
-    matchBrackets: true
-
-  });
-
-  cm.js.on("change",(change) => {
-
-    upd();
-
-  });
-
-});
+}, {once: true});
 
 
 
