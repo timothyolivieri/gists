@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", async() => {
           do {
             var key = keys[i];
             var ext = key.split(".")[1];
+            console.log(61, key);
             if(key == "index.html") {
               cm[ext].setValue(vals[i].content);
             }

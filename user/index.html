@@ -104,19 +104,16 @@
             <template>
               <card>
                 <row>
-                  <picture><img></picture>
-                  <text>username</text>
+                  <picture css-height="30px" css-width="30px"><img css-border-radius="50%"></picture>
+                  <text>
+                    <div><a class="username">username</a> / <a class="filename">filename</a></div>
+                    <div class="created">Created 3 weeks ago</div>
+                    <div class="description"></div>
+                  </text>
                 </row>
               </card>
             </template>
-            <section css-padding-top="50px">
-              <card>
-                <row>
-                  <picture><img></picture>
-                  <text>username</text>
-                </row>
-              </card>
-            </section>
+            <column css-gap="20px" css-padding-top="50px" id="my-gists"></column>
           </block>
         </blocks>
       </page>
