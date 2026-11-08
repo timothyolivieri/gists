@@ -1,9 +1,11 @@
 <html lang="en"><head>
+    <title>Gists</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://timothyolivieri.github.io/raw/asset/css/reset.css">
     <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gists</title>
+    <script src="https://timothyolivieri.github.io/raw/asset/js/vanilla.js"></script>
+    <script src="./script.js"></script>
   </head>
   <body>
     <main>
@@ -40,152 +42,24 @@
             </section>
           </header>
           <block>
-            <column>
+            <template>
               <card>
                 <row>
-                  <box>
-                    <section>
-                      <picture><img></picture>
-                    </section>
-                  </box>
-                  <box>
-                    <column>
-                      <line></line>
-                      <line></line>
-                      <line></line>
-                    </column>
-                  </box>
+                  <picture css-height="30px" css-width="30px"><img css-border-radius="50%"></picture>
+                  <text>
+                    <div><a class="username">username</a> / <a class="filename">filename</a></div>
+                    <div class="created">Created 3 weeks ago</div>
+                    <div class="description"></div>
+                  </text>
                 </row>
               </card>
-            </column>
+            </template>
+            <column css-gap="20px" css-padding-top="50px" id="feed-gists"></column>
           </block>
         </blocks>
       </page>
-      <page route="/gists/code">
-        <blocks>
-          <block css-display="none" css-dw480px-display="flex">
-            <section>
-              <card>
-                <row>
-                  <box>
-                    <row>
-                      <text>HTML</text>
-                      <i><con></con></i>
-                    </row>
-                  </box>
-                  <box>
-                    <row>
-                      <text>CSS</text>
-                      <i><con></con></i>
-                    </row>
-                  </box>
-                  <box>
-                    <row>
-                      <text>JS</text>
-                      <i><con></con></i>
-                    </row>
-                  </box>
-                </row>
-              </card>
-            </section>
-          </block>
-          <block>
-            <section css-flex-direction="row">
-              <card>
-                <section css-flex-direction="column">
-                  <box>
-                    <header>HTML</header>
-                    <section id="CodeMirrorHTML"></section>
-                  </box>
-                  <box>
-                    <header>CSS</header>
-                    <section id="CodeMirrorCSS"></section>
-                  </box>
-                  <box>
-                    <header>JS</header>
-                    <section id="CodeMirrorJS"></section>
-                  </box>
-                </section>
-              </card>
-              <card>
-                <iframe id="iframe-code"></iframe>
-              </card>
-            </section>
-          </block>
-        </blocks>
-      </page>
-      <page route="/gists/user">
-        <blocks auth="false">
-          <header>
-            <section>
-              <card>
-                <row>
-                  <box css-margin-right="auto">
-                    <a>
-                      <i>
-                        <con></con>
-                      </i>
-                      <text>Gists</text>
-                    </a>
-                  </box>
-                  <box>
-                    <a>
-                      <i>
-                        <con></con>
-                      </i>
-                    </a>
-                  </box>
-                  <box>
-                    <a>
-                      <i>
-                        <con></con>
-                      </i>
-                    </a>
-                  </box>
-                </row>
-              </card>
-            </section>
-          </header>
-          <block>
-            <section>
-              <card css-text-align="center">
-                <column>
-                  <box>
-                    <form css-flex-direction="column">
-                      <text>Enter GitHub Access Key</text>
-                      <input type="text">
-                      <input type="submit">
-                    </form>
-                  </box>
-                  <box>
-                    <section>
-                      <text>or</text>
-                    </section>
-                  </box>
-                  <box>
-                    <row>
-                      <ico><n></n></ico>
-                      <text>Signin with GitHub
-                    </text></row>
-                  </box>
-                </column>
-              </card>
-          
-        
-        <blocks auth="true">
-          <block>
-            <section>
-              <card>
-                <row>
-                  <picture><img></picture>
-                  <text>username</text>
-                </row>
-              </card>
-            </section>
-          </block>
-        </blocks>
-      
-    </section></block></blocks></page></main>
-  
-
-</body></html>
+      <page route="/gists/code"></page>
+      <page route="/gists/user"></page>
+    </main>
+  </body>
+</html>

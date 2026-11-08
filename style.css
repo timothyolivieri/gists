@@ -10,8 +10,16 @@
   flex-direction: column;
 }
 
+[css-width="30px"] {
+  width: 30px;
+}
+
 [css-width="320px"] {
   width: 320px;
+}
+
+[css-height="30px"] {
+  height: 30px;
 }
 
 [css-height="100%"] {
@@ -32,6 +40,10 @@
 
 [css-width="5px"] {
   width: 5px;
+}
+
+[css-border-radius="50%"] {
+  border-radius: 50%;
 }
 
 [css-border-left="1px solid black"] {
