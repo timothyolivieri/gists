@@ -10,6 +10,14 @@
   flex-direction: column;
 }
 
+[css-gap="5px"] {
+  gap: 5px;
+}
+
+[css-gap="20px"] {
+  gap: 20px;
+}
+
 [css-width="30px"] {
   width: 30px;
 }
@@ -34,12 +42,28 @@
   height: calc(100%/3)
 }
 
+[css-margin="auto"] {
+  margin: auto;
+}
+
 [css-margin-left="auto"] {
   margin-left: auto;
 }
 
+[css-padding-top="20px"] {
+  padding-top: 20px;
+}
+
 [css-width="5px"] {
   width: 5px;
+}
+
+[css-width="720px"] {
+  width: 720px;
+}
+
+[css-max-width="100%"] {
+  max-width: 100%;
 }
 
 [css-border-radius="50%"] {
