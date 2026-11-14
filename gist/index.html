@@ -56,9 +56,9 @@
               </card>
             </section>
           </header>
-          <block css-display="none" css-dw480px-display="flex">
+          <block css-border-bottom="1px solid black" css-display="none" css-dw640px-display="flex">
             <section>
-              <card>
+              <card css-line-height="50px">
                 <row>
                   <box>
                     <row>
@@ -83,25 +83,25 @@
             </section>
           </block>
           <block css-flex="1">
-            <section css-flex-direction="row">
-              <card css-width="320px" css-height="100%">
+            <section css-flex-direction="row" css-dw640px-flex-direction="column">
+              <card css-width="320px" css-height="100%" css-dw640px-height="50%" css-dw640px-width="100%">
                 <section css-flex-direction="column">
-                  <box css-height="calc(100%/3)">
-                    <header css-border-bottom="1px solid black" css-line-height="50px">HTML</header>
+                  <box css-height="calc(100%/3)" css-dw640px-height="100%" css-dw640px-display="flex">
+                    <header css-border-bottom="1px solid black" css-dw640px-display="none" css-line-height="50px">HTML</header>
                     <section css-width="100%" id="CodeMirrorHTML"></section>
                   </box>
-                  <box css-height="calc(100%/3)">
-                    <header css-border-bottom="1px solid black" css-line-height="50px">CSS</header>
+                  <box css-height="calc(100%/3)" css-dw640px-height="100%" css-dw640px-display="none">
+                    <header css-border-bottom="1px solid black" css-dw640px-display="none" css-line-height="50px">CSS</header>
                     <section css-width="100%" id="CodeMirrorCSS"></section>
                   </box>
-                  <box css-height="calc(100%/3)">
-                    <header css-border-bottom="1px solid black" css-line-height="50px">JS</header>
+                  <box css-height="calc(100%/3)" css-dw640px-height="100%" css-dw640px-display="none">
+                    <header css-border-bottom="1px solid black" css-dw640px-display="none" css-line-height="50px">JS</header>
                     <section css-width="100%" id="CodeMirrorJS"></section>
                   </box>
                 </section>
               </card>
-              <card css-flex="1" css-flex-direction="row">
-                <line css-width="5px" css-border-left="1px solid black" css-border-right="1px solid black" css-height="100%"></line>
+              <card css-flex="1" css-flex-direction="row" css-dw640px-flex-direction="column">
+                <line css-width="5px" css-dw640px-width="100%" css-border-left="1px solid black" css-border-right="1px solid black" css-height="100%" css-dw640px-height="5px"></line>
                 <iframe css-flex="1" id="iframe-code"></iframe>
               </card>
             </section>
