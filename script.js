@@ -53,7 +53,7 @@ mvc.controller.token = async(event) => {
 document.addEventListener("DOMContentLoaded", () => {
   var githubToken = localStorage.getItem("github-token");
   if(githubToken) {
-    document.body.setAttribute("auth", githubToken); 
-    mvc.view['/'](githubToken);   
+    document.body.setAttribute("auth", githubToken);   
   }
+  mvc.view['/'](githubToken); 
 });
